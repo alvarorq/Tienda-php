@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tienda PHP - Pruebas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="<?= base_url();?>asset/css/main.css" />
 </head>
 <body>
     <h1>Tienda PHP</h1>
-    <a href="<?= base_url();?>/index.php/inicio_ctrl/todos">Todos</a>
-    <a href="http://localhost/DWES/framework/CodeIgniter/">Destacados</a>
+    <a href="<?= base_url();?>index.php/inicio_ctrl/todos">Todos</a>
+    <a href="<?= base_url();?>">Destacados</a>
     <table border=solid>
     <tr>
     <th>Nombre</th>
