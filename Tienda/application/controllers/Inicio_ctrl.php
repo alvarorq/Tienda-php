@@ -13,18 +13,36 @@ class Inicio_ctrl extends CI_Controller {
     }
 
     /**
-     * Facilitamos los datos del modelo a la vista
+     * Facilitamos los productos destacados a la vista
      */
     public function index(){
+        $this->carrito->micarro();
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'productos'=>$this->productos_model->getdestacados()]);
     }
 
+    /**
+     * Facilitamos todos los productos visibles de la base de datos a la vista
+     */
     public function todos(){
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-            'productos'=>$this->productos_model->getproductos()]);
+            'productos'=>$this->productos_model->getproductos()
+            ]);
+    }
+
+    /**
+     * Destalles de un solo producto
+     *
+     * @param [int] $id
+     */
+    public function detallesproductos($id){
+        $this->load->view('detallesproducto', [
+            'plantilla'=>$this->load->view('plantillas/plantilla'),
+            'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
+            'producto'=>$this->productos_model->getproducto($id)
+        ]);
     }
 }

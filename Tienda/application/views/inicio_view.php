@@ -9,9 +9,6 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tienda PHP</h1>
-        <a href="<?= base_url();?>index.php/inicio_ctrl/todos">Todos</a>
-        <a href="<?= base_url();?>">Destacados</a>
             
         <div class="row contenido">
             
@@ -22,7 +19,7 @@
                         <h5 class="card-title"><?= $producto->nombre; ?></h5>
                         <p class="card-text"><?= $producto->descripcion; ?></p>
                         <p class="card-text"><?= $producto->precio; ?>€</p>
-                        <a href="#" class="btn btn-primary"> Al carrito</a>
+                        <a href="<?= base_url();?>index.php/inicio_ctrl/detallesproductos/<?= $producto->codigoProducto; ?>" class="btn btn-primary"> Detalles</a>
                     </div>
                 </div>
             <?php } ?>
