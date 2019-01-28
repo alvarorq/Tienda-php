@@ -9,10 +9,6 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tienda PHP</h1>
-        <a href="<?= base_url();?>index.php/inicio_ctrl/todos">Todos</a>
-        <a href="<?= base_url();?>">Destacados</a>
-            
         <div class="row contenido">
             <?php foreach ($producto as $detalles) { ?>
                 <div class="col-md-3 col-12" >
@@ -21,9 +17,12 @@
                         <h5 class="card-title"><?= $detalles->nombre; ?></h5>
                         <p class="card-text"><?= $detalles->descripcion; ?></p>
                         <p class="card-text"><?= $detalles->precio; ?>€</p>
+                        <form action="<?= site_url('inicio_ctrl/addcarro/'.$detalles->codigoProducto);?>" method="post">
                         <p>Cant. </p><input type="number" name="cantidad" id="cantidad">
                         <hr>
-                        <a href="<?= site_url('inicio_ctrl/detallesproductos').'/'. $producto->codigoProducto; ?>" class="btn btn-primary"> Al carrito</a>
+                        <input type="submit" value="Al carrito">
+                        </form>
+                        <a href="<?= site_url('inicio_ctrl/detallesproductos').'/'. $detalles->codigoProducto; ?>" class="btn btn-primary"> Al carrito</a>
                     </div>
                 </div>
             <?php } ?>

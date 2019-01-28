@@ -11,21 +11,22 @@ class Carrito {
     protected $CI;
 
     public function __construct(){
-        $this->CI =get_instance();  
+        $this->CI = get_instance();  
+        $this->CI->session->set_userdata($lineaspedido[]);
     }
 
     /**
      * Facilitamos los productos destacados a la vista
      */
     public function micarro(){
-        $this->CI->session->set_userdata('dato','PRUEBA DE LIBRERIA');
+        echo '<p>'.$this->CI->session->userdata('datos');
     }
 
     /**
      * Añadir producto al carrito de la compra
      */
-    public function addcarro(){
-
+    public function addcarro($linea){
+        $this->CI->session->set_userdata($lineaspedido[$linea]);
     }
     
     /**

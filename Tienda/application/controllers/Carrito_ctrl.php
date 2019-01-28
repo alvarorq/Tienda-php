@@ -1,8 +1,8 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.0
-@date 25/1/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.0
+* @date 25/1/2019
 */
 
 class Carrito_ctrl extends CI_Controller {
@@ -15,6 +15,8 @@ class Carrito_ctrl extends CI_Controller {
      * Facilitamos los productos destacados a la vista
      */
     public function vercarro(){
+        //$this->cart->destroy();
+        
         $this->load->view('carrito_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             ]);
