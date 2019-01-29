@@ -43,4 +43,14 @@ class Productos_model extends CI_Model {
         return $query->result();
     }
 
+    /**
+     * Obtener productos pertenecientes a la categoria pasada por parametro
+     *
+     * @param [int] $cat
+     * @return array()
+     */
+    public function getporcatego($cat){
+        $query = $this->db->get_where('productos',array('Categoria'=> $cat, 'visible' => 1));
+        return $query->result();
+    }
 }

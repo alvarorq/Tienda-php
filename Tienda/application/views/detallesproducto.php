@@ -20,9 +20,8 @@
                         <form action="<?= site_url('inicio_ctrl/addcarro/'.$detalles->codigoProducto);?>" method="post">
                         <p>Cant. </p><input type="number" name="cantidad" id="cantidad">
                         <hr>
-                        <input type="submit" value="Al carrito">
+                        <input class="btn btn-primary" type="submit" value="Al carrito">
                         </form>
-                        <a href="<?= site_url('inicio_ctrl/detallesproductos').'/'. $detalles->codigoProducto; ?>" class="btn btn-primary"> Al carrito</a>
                     </div>
                 </div>
             <?php } ?>

@@ -11,10 +11,8 @@ class Pruebas extends CI_Controller {
         $this->load->model('news_model');
     }
 
-    /**
-     * Facilitamos los datos del modelo a la vista
-     */
-    public function index(){
-        $this->load->view('plantillas/menu_categorias',['categorias'=>$this->news_model->prueba()]);
+   
+    public function formulario(){
+        
     }
 }
