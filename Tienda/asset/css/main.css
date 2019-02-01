@@ -1,11 +1,17 @@
 .menu{
     background-color: brown;
+    padding: 7px;
 }
 .izq{
     display: inline-block;
     margin-right: 10px;
-    border:solid 1px;
+    border:solid 5px black;
     padding-right: 7px;
+}
+
+.rig{
+    float: right;
+    background-color: blue;
 }
 
 .contenido{
