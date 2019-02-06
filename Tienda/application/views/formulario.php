@@ -1,4 +1,10 @@
 <?php
+/**
+@author Alvaro <alvarorq7@gmail.com>
+@version 1.0.0
+@lastChanges 05/02/2019
+*/
+
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
@@ -50,13 +56,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<input type="text" name="cp" value="<?php echo set_value('cp'); ?>" />	
 	
 	<h5>Provincia:</h5>
-	<select name="provincia" id="provincia">
-			<option value="------------------">------------------</option>
+	<?php echo form_error('provincias'); ?>
+	<select name="provincias" id="provincias">
+			<option value="0">------------------</option>
                <?php   
-                    foreach ($provincias as $key => $value) {
-								 echo '<option value="'.$key.'"';
-								 if(isset($_POST["provincia"])&&$_POST["provincia"]=="$key"){ echo 'selected';}
-                         echo '>'.$value.'</option>';
+                    foreach ($provincias as $provincia) {
+								 echo '<option value="'.$provincia->cod.'"';
+								 echo set_select('provincias',$provincia->cod);
+                         echo '>'.$provincia->nombre.'</option>';
                      }
                ?>
 	</select>
