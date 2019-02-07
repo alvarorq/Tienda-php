@@ -2,7 +2,7 @@
 /**
 @author Alvaro <alvarorq7@gmail.com>
 @version 1.0.0
-@lastChanges 05/02/2019
+@lastChanges 06/02/2019
 */
 
 class Formulario_ctrl extends CI_Controller {
@@ -10,6 +10,7 @@ class Formulario_ctrl extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('provincias_model');
+        $this->load->model('usuario_model');
     }
 
     /**
@@ -35,6 +36,8 @@ class Formulario_ctrl extends CI_Controller {
         }
         else
         {
+            $datos = $this->input->post();
+            $this->usuario_model->setusuario($datos);
             redirect('inicio_ctrl/index');
         }
     }
@@ -61,6 +64,12 @@ class Formulario_ctrl extends CI_Controller {
 
     }
 
+    /**
+     * Filtrado de Provincias para verificar que se introduce
+     *
+     * @param [int] $valor
+     * @return boolean
+     */
     public function provincias_check($valor)
     {
             if ($valor == 00)

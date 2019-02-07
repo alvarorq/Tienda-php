@@ -2,7 +2,7 @@
 /**
 @author Alvaro <alvarorq7@gmail.com>
 @version 1.0.0
-@lastChanges 05/02/2019
+@lastChanges 06/02/2019
 */
 
 defined('BASEPATH') or exit('No direct script access allowed');
