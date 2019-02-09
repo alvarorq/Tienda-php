@@ -3,6 +3,7 @@
 * @author Alvaro <alvarorq7@gmail.com>
 * @version 1.0.1
 * @date 25/1/2019
+* @lastChanges 29/02/2019
 */
 
 class Carrito_ctrl extends CI_Controller {

@@ -2,6 +2,8 @@
 /**
 @author Alvaro <alvarorq7@gmail.com>
 @version 1.0.0
+@date 20/01/2019
+@lastChanges 29/02/2019
 */
 
 class Productos_model extends CI_Model {

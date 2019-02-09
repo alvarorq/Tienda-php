@@ -57,16 +57,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	
 	<h5>Provincia:</h5>
 	<?php echo form_error('provincias'); ?>
-	<select name="provincias" id="provincias">
-			<option value="0">------------------</option>
-               <?php   
-                    foreach ($provincias as $provincia) {
-								 echo '<option value="'.$provincia->cod.'"';
-								 echo set_select('provincias',$provincia->cod);
-                         echo '>'.$provincia->nombre.'</option>';
-                     }
-               ?>
-	</select>
+	<?php echo form_dropdown('provincias',formatoArraySelect($provincias, $dafault=['00'=>'Seleccione una provincia'])); ?>
 	
 
 	<div><input type="submit" value="Submit" /></div>

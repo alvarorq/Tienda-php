@@ -15,7 +15,12 @@
             <p>Tienda de componentes informaticos</p>
             <h1>Tienda PHP</h1>
             <div class="rig">
-                <a href="<?=site_url('formulario_ctrl/form');?>">Resgistrate</a>
+                <?php if($this->session->userdata('logeado')==!null){ ?>
+                    <p>HAS INICIADO SESION</p>
+                <?php }else { ?>
+                        <a href="<?=site_url('formulario_ctrl/iniciarSesion');?>" class="btn btn-primary">Login</a>
+                        <a href="<?=site_url('formulario_ctrl/form');?>" class="btn btn-primary">Resgistrate</a>
+                <?php } ?>                
             </div>
             <h3>
             <a href="<?= site_url('inicio_ctrl/todos')?>">Todos</a>

@@ -1,20 +1,59 @@
 <?php
 /**
 @author Alvaro <alvarorq7@gmail.com>
-@version 1.0.0
-@lastChanges 06/02/2019
+@version 1.0.2
+@date 21/01/2019
+@lastChanges 09/02/2019
 */
 
 class Formulario_ctrl extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+        $this->load->model('productos_model');
+        $this->load->model('categorias_model');
+        $this->load->helper('selectoption');
         $this->load->model('provincias_model');
         $this->load->model('usuario_model');
     }
 
+    public function iniciarSesion(){
+        $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required');
+        $this->form_validation->set_rules('logpass', 'Logpass', 'trim|required');
+
+
+        if($this->form_validation->run() == FALSE){
+            $this->load->view(
+                'login',
+                [
+                    'plantilla' => $this->load->view('plantillas/plantilla'),
+                ]);
+        }else{
+            $datos = $this->input->post();
+            $boleano = $this->usuario_model->autenticarUsuario($datos);
+            if($boleano){
+                $usuario=$this->session->userdata('usuario')[0];
+                echo '<p>'.$usuario->nickName;
+                echo '<p>entra';
+            $this->load->view('inicio_view',[
+                'plantilla'=>$this->load->view('plantillas/plantilla'),
+                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
+                'productos'=>$this->productos_model->getdestacados()
+                ]);
+            }else{
+                $this->load->view(
+                    inicio_view,
+                    [
+                        'plantilla' => $this->load->view('plantillas/plantilla'),
+                        'usuario' => $this->load->view('platillas/login', ['error'=> '<p>Usuario no encontrado</p>'])
+                    ]);
+            }
+               
+        }
+    }
+
     /**
-     * Validacion del formulario mediante las reglas(rules) establecidas
+     * Validacion del formulario de registro mediante las reglas(rules) establecidas
      */
     public function form(){
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');

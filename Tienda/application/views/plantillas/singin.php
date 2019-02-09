@@ -1,8 +1,8 @@
 <div class="rig">
-    <?php if($sesion->logged){ ?>
-
-    <?php }else { ?>
-    <a href="<?=site_url('inicio_ctrl/porcatego/');?>">Resgistrate</a>
-
-    <?php }?>
+    <p>Bienvenido </p>
+    <?php 
+        echo '<pre>';
+        print_r($iniciar->usuario); 
+        echo '</pre>';
+    ?>
 </div>
