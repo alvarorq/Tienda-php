@@ -1,9 +1,9 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.2
-@date 20/01/2019
-@lastChanges 12/02/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.2
+* @date 20/01/2019
+* @lastChanges 12/02/2019
 */
 
 class Inicio_ctrl extends CI_Controller {
@@ -12,29 +12,43 @@ class Inicio_ctrl extends CI_Controller {
         parent::__construct();
         $this->load->model('productos_model');
         $this->load->model('categorias_model');
-        $this->load->helper('selectoption');
         $this->load->model('usuario_model');
     }
 
     /**
      * Facilitamos los productos destacados a la vista
+     *
+     * @param integer $pagina
      */
-    public function index(){
+    public function index($pagina=FALSE){
+        $inicio=0;
+        if($pagina){
+            $inicio=$pagina;
+        }
+        $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/todos',$this->productos_model->getdestacados(),'4');
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-            'productos'=>$this->productos_model->getdestacados()
+            'productos'=>$this->productos_model->getdestacados($inicio,'4')
             ]);
     }
 
     /**
      * Facilitamos todos los productos visibles de la base de datos a la vista
+     *
+     * @param integer $pagina
      */
-    public function todos(){
+    public function todos($pagina=FALSE)
+    {   
+        $inicio=0;
+        if($pagina){
+            $inicio=$pagina;
+        }
+        $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/todos',$this->productos_model->getproductos(),'4');
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-            'productos'=>$this->productos_model->getproductos()
+            'productos'=>$this->productos_model->getproductos($inicio,'4')
             ]);
     }
 

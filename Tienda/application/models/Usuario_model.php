@@ -1,9 +1,9 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.0
-@date 06/02/2019
-@lastChanges 11/02/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.0
+* @date 06/02/2019
+* @lastChanges 11/02/2019
 */
 
 class Usuario_model extends CI_Model {

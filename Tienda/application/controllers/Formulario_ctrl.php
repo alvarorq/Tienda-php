@@ -1,9 +1,9 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.2
-@date 21/01/2019
-@lastChanges 11/02/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.2
+* @date 21/01/2019
+* @lastChanges 12/02/2019
 */
 
 class Formulario_ctrl extends CI_Controller {
@@ -12,7 +12,6 @@ class Formulario_ctrl extends CI_Controller {
         parent::__construct();
         $this->load->model('productos_model');
         $this->load->model('categorias_model');
-        $this->load->helper('selectoption');
         $this->load->model('provincias_model');
         $this->load->model('usuario_model');
     }

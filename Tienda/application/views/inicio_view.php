@@ -22,7 +22,9 @@
                         <a href="<?= base_url();?>index.php/inicio_ctrl/detallesproductos/<?= $producto->codigoProducto; ?>" class="btn btn-primary"> Detalles</a>
                     </div>
                 </div>
-            <?php } ?>
+            <?php }
+            echo $this->pagination->create_links();
+            ?>
         </div>
     </div>
 </body>

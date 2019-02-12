@@ -1,9 +1,9 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.0
-@date 20/01/2019
-@lastChanges 05/02/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.0
+* @date 20/01/2019
+* @lastChanges 05/02/2019
 */
 
 class Categorias_model extends CI_Model {

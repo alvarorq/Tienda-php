@@ -1,9 +1,9 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.0
-@date 05/02/2019
-@lastChanges 07/02/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.0
+* @date 05/02/2019
+* @lastChanges 07/02/2019
 */
 
 class Provincias_model extends CI_Model {

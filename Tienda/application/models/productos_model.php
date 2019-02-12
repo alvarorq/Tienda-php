@@ -1,9 +1,9 @@
 <?php
 /**
-@author Alvaro <alvarorq7@gmail.com>
-@version 1.0.0
-@date 20/01/2019
-@lastChanges 29/02/2019
+* @author Alvaro <alvarorq7@gmail.com>
+* @version 1.0.0
+* @date 20/01/2019
+* @lastChanges 29/02/2019
 */
 
 class Productos_model extends CI_Model {
@@ -18,8 +18,12 @@ class Productos_model extends CI_Model {
  *
  * @return array()
  */
-    public function getproductos()
+    public function getproductos($inicio=false, $limite=false)
     {
+        if($inicio!==FALSE && $limite!==FALSE){
+            $this->db->limit($limite, $inicio);
+        }
+
         $query = $this->db->get_where('productos', array('visible' => 1));
         return $query->result();
     }
@@ -29,8 +33,11 @@ class Productos_model extends CI_Model {
  *
  * @return array()
  */
-    public function getdestacados()
+    public function getdestacados($inicio=false, $limite=false)
     {
+        if($inicio!==FALSE && $limite!==FALSE){
+            $this->db->limit($limite, $inicio);
+        }
         $query = $this->db->get_where('productos', array('visible' => 1, 'destacado' => 1));
         return $query->result();
     }
