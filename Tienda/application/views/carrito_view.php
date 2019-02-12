@@ -21,14 +21,15 @@
                     <td><?= $items['price'] ;?>€</td>
                     <td><?= $items['qty'] ;?></td>
                     <td><?= $items['subtotal'] ;?>€</td>
-                    <td><a href="<?= site_url('inicio_ctrl/removecarro').'/'. $items['rowid'];?>">borrar</a></td>
+                    <td><a href="<?= site_url('carrito_ctrl/removecarro').'/'. $items['rowid'];?>">borrar</a></td>
                 </tr>      
         <?php } ?>
         <tr>
              <td></td>
              <td></td>
              <td></td>
-             <td><strong>Total: <?= $this->cart->total(); ?>€</strong></td>   
+             <td><strong>Total: <?= $this->cart->total(); ?>€</strong></td>  
+             <td><a href="<?= site_url('carrito_ctrl/vaciarCarro');?>">Vaciar</a></td> 
         </tr>
 </table>
 

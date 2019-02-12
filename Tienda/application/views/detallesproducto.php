@@ -16,8 +16,9 @@
                         <h5 class="card-title"><?= $detalles->nombre; ?></h5>
                         <p class="card-text"><?= $detalles->descripcion; ?></p>
                         <p class="card-text"><?= $detalles->precio; ?>€</p>
-                        <form action="<?= site_url('inicio_ctrl/addcarro/'.$detalles->codigoProducto);?>" method="post">
-                        <p>Cant. </p><input type="number" name="cantidad" id="cantidad">
+                        <?php echo form_open('inicio_ctrl/addcarro'); ?>
+                        <input type="hidden" name="idproduc" id="idproduc" value="<?=$detalles->codigoProducto;?>">
+                        <p>Cant. </p><input type="number" name="cantidad" id="cantidad" value="<?php if(set_value('cantidad')){echo set_value('cantidad');}else{echo '1';}; ?>"><?php echo form_error('cantidad'); ?>
                         <hr>
                         <input class="btn btn-primary" type="submit" value="Al carrito">
                         </form>

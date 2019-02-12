@@ -15,8 +15,9 @@
             <p>Tienda de componentes informaticos</p>
             <h1>Tienda PHP</h1>
             <div class="rig">
-                <?php if($this->session->userdata('logeado')==!null){ ?>
+                <?php var_dump($this->session->userdata('logeado')); if($this->session->userdata('logeado')==!FALSE){ ?>
                     <p>HAS INICIADO SESION</p>
+                    <a href="<?=site_url('inicio_ctrl/cerrarSesion');?>" class="btn btn-danger">Cerrar Sesion</a>
                 <?php }else { ?>
                         <a href="<?=site_url('formulario_ctrl/iniciarSesion');?>" class="btn btn-primary">Login</a>
                         <a href="<?=site_url('formulario_ctrl/form');?>" class="btn btn-primary">Resgistrate</a>

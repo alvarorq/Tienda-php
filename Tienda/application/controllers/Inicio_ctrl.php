@@ -3,7 +3,7 @@
 @author Alvaro <alvarorq7@gmail.com>
 @version 1.0.2
 @date 20/01/2019
-@lastChanges 09/02/2019
+@lastChanges 12/02/2019
 */
 
 class Inicio_ctrl extends CI_Controller {
@@ -12,6 +12,8 @@ class Inicio_ctrl extends CI_Controller {
         parent::__construct();
         $this->load->model('productos_model');
         $this->load->model('categorias_model');
+        $this->load->helper('selectoption');
+        $this->load->model('usuario_model');
     }
 
     /**
@@ -67,39 +69,46 @@ class Inicio_ctrl extends CI_Controller {
      *
      * @param [int] $id
      */
-    public function addcarro($id){
-        foreach ($producto=$this->productos_model->getproducto($id) as $detalles) {
-            $linea=[
-                'id' => $id,
-                'qty' => $_POST['cantidad'],
-                'price' => $detalles->precio,
-                'name' => $detalles->nombre
-            ];
+    public function addcarro(){
+        $this->form_validation->set_rules('cantidad', 'Cantidad', 'trim|required|integer');
+        $campos=$this->input->post();
+        print_r($campos);
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('detallesproducto', [
+                'plantilla'=>$this->load->view('plantillas/plantilla'),
+                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
+                'producto'=>$this->productos_model->getproducto($campos['idproduc'])
+            ]);
+        }else{
+            foreach ($producto=$this->productos_model->getproducto($campos['idproduc']) as $detalles) {
+                $linea=[
+                    'id' => $campos['idproduc'],
+                    'qty' => $_POST['cantidad'],
+                    'price' => $detalles->precio,
+                    'name' => $detalles->nombre
+                ];
+            }
+        
+            $this->cart->insert($linea);
+            $this->load->view('detallesproducto', [
+                'plantilla'=>$this->load->view('plantillas/plantilla'),
+                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
+                'producto'=>$this->productos_model->getproducto($campos['idproduc'])
+            ]);
         }
-       
-        $this->cart->insert($linea);
-        $this->load->view('detallesproducto', [
-            'plantilla'=>$this->load->view('plantillas/plantilla'),
-            'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-            'producto'=>$this->productos_model->getproducto($id)
-        ]);
     }
 
-    /**
-     * Elimina un producto del carrito de la compra por el ROWID que le entregamos por parametros
-     *
-     * @param [String] $rowid
-     */
-    public function removecarro($rowid){
-        $data=array(
-            'rowid'=>$rowid,
-            'qty'=>0
-        );
+    
 
-        $this->cart->update($data);
-        $this->load->view('carrito_view', [
+    /**
+     * Cerrar la sesion del usuario que este logeado en ese momento
+     */
+    public function cerrarSesion(){
+        $this->usuario_model->cerrarSesion();
+        $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
-            'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
-        ]);
+            'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
+            'productos'=>$this->productos_model->getdestacados()
+            ]);
     }
 }

@@ -3,23 +3,28 @@
 @author Alvaro <alvarorq7@gmail.com>
 @version 1.0.0
 @date 06/02/2019
-@lastChanges 09/02/2019
+@lastChanges 11/02/2019
 */
 
 class Usuario_model extends CI_Model {
 
         public function __construct()
-        {
+        {       
                 $this->load->database();
+                
         }
 
         /**
-         * Comprobar si el usuario ha iniciado sesion, devolviendo los datos en caso afirmativo o en otro caso false
+         * Cierra la sesion del usuario en caso de que este abierta
          *
          * @return boolean
          */
-        public function estaDentro(){
-                
+        public function cerrarSesion(){
+                if($this->session->set_userdata('logeado')==TRUE){
+                $this->session->unset_userdata('usuario');
+                $this->session->set_userdata('logeado',FALSE);
+                }
+
         }
 
         /**
@@ -40,7 +45,6 @@ class Usuario_model extends CI_Model {
                 if($resultados != 0){
                         $iniciar=[
                                 'logeado'=>TRUE,
-                                'entra'=>'Ha entrado pisha',
                                 'usuario'=>$usuario->result()
                         ];
 

@@ -21,9 +21,12 @@
                         </div>
                         <input type="text" class="form-control" name="logpass" placeholder="Contraseña">
                         </div>
-                        <input type="submit" class="btn btn-success" value="Login"> 
-                        
+                        <input type="submit" class="btn btn-success" value="Login">
+                    
                         </div>
+                        <br>
+                        <?php echo form_error('usuario'); ?> 
+                        <?php echo form_error('logpass'); ?>
                     </form>
 </body>
 </html>

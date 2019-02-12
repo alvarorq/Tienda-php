@@ -3,7 +3,7 @@
 @author Alvaro <alvarorq7@gmail.com>
 @version 1.0.2
 @date 21/01/2019
-@lastChanges 09/02/2019
+@lastChanges 11/02/2019
 */
 
 class Formulario_ctrl extends CI_Controller {
@@ -34,7 +34,6 @@ class Formulario_ctrl extends CI_Controller {
             if($boleano){
                 $usuario=$this->session->userdata('usuario')[0];
                 echo '<p>'.$usuario->nickName;
-                echo '<p>entra';
             $this->load->view('inicio_view',[
                 'plantilla'=>$this->load->view('plantillas/plantilla'),
                 'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
