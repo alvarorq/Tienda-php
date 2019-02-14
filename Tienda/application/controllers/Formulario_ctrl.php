@@ -16,37 +16,6 @@ class Formulario_ctrl extends CI_Controller {
         $this->load->model('usuario_model');
     }
 
-    public function iniciarSesion(){
-        $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required');
-        $this->form_validation->set_rules('logpass', 'Logpass', 'trim|required');
-
-        if($this->form_validation->run() == FALSE){
-            $this->load->view(
-                'login',
-                [
-                    'plantilla' => $this->load->view('plantillas/plantilla'),
-                ]);
-        }else{
-            $datos = $this->input->post();
-            $boleano = $this->usuario_model->autenticarUsuario($datos);
-            if($boleano){
-                $usuario=$this->session->userdata('usuario')[0];
-                $this->load->view('inicio_view',[
-                    'plantilla'=>$this->load->view('plantillas/plantilla'),
-                    'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-                    'productos'=>$this->productos_model->getdestacados()
-                ]);
-            }else{
-                $this->load->view(
-                    inicio_view,
-                    [
-                        'plantilla' => $this->load->view('plantillas/plantilla'),
-                        'usuario' => $this->load->view('platillas/login', ['error'=> '<p>Usuario no encontrado</p>'])
-                    ]);
-            }   
-        }
-    }
-
     /**
      * Validacion del formulario de registro mediante las reglas(rules) establecidas
      */

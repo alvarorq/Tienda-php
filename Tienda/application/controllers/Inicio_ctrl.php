@@ -119,6 +119,14 @@ class Inicio_ctrl extends CI_Controller {
      * Cerrar la sesion del usuario que este logeado en ese momento
      */
     public function cerrarSesion(){
+       /* $this->email->from('alvarorq7@gmail.com', 'Alvaro');
+        $this->email->to('alvarorq@outlook.com');
+
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');
+
+        $this->email->send();
+*/
         $this->usuario_model->cerrarSesion();
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),

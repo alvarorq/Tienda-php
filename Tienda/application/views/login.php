@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-                    <?php echo form_open('formulario_ctrl/iniciarSesion'); ?>
+                    <?php echo form_open('usuario_ctrl/iniciarSesion'); ?>
                         <div class="form-inline" action="">
                         <div class="input-group">
                         <div class="input-group-prepend">
