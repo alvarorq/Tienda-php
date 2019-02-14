@@ -18,9 +18,7 @@ class Carrito_ctrl extends CI_Controller {
     /**
      * Facilitamos los productos destacados a la vista
      */
-    public function vercarro(){
-        //$this->cart->destroy();
-        
+    public function vercarro(){        
         $this->load->view('carrito_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
@@ -49,7 +47,6 @@ class Carrito_ctrl extends CI_Controller {
      * Vaciar el carrito de la compra por completo
      */
     public function vaciarCarro(){
-       
         $this->cart->destroy();
         $this->load->view('carrito_view', [
             'plantilla'=>$this->load->view('plantillas/plantilla'),

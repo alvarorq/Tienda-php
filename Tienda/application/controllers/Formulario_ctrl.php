@@ -20,7 +20,6 @@ class Formulario_ctrl extends CI_Controller {
         $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required');
         $this->form_validation->set_rules('logpass', 'Logpass', 'trim|required');
 
-
         if($this->form_validation->run() == FALSE){
             $this->load->view(
                 'login',
@@ -32,11 +31,10 @@ class Formulario_ctrl extends CI_Controller {
             $boleano = $this->usuario_model->autenticarUsuario($datos);
             if($boleano){
                 $usuario=$this->session->userdata('usuario')[0];
-                echo '<p>'.$usuario->nickName;
-            $this->load->view('inicio_view',[
-                'plantilla'=>$this->load->view('plantillas/plantilla'),
-                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-                'productos'=>$this->productos_model->getdestacados()
+                $this->load->view('inicio_view',[
+                    'plantilla'=>$this->load->view('plantillas/plantilla'),
+                    'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
+                    'productos'=>$this->productos_model->getdestacados()
                 ]);
             }else{
                 $this->load->view(
@@ -45,8 +43,7 @@ class Formulario_ctrl extends CI_Controller {
                         'plantilla' => $this->load->view('plantillas/plantilla'),
                         'usuario' => $this->load->view('platillas/login', ['error'=> '<p>Usuario no encontrado</p>'])
                     ]);
-            }
-               
+            }   
         }
     }
 
@@ -63,13 +60,12 @@ class Formulario_ctrl extends CI_Controller {
         $this->form_validation->set_rules('cp', 'Cp', 'trim|required|exact_length[5]');
         $this->form_validation->set_rules('provincias', 'Provincias', 'callback_provincias_check');
 
-
         if ($this->form_validation->run() == FALSE)
         {
-                $this->load->view('formulario',[
-                    'provincias'=>$this->provincias_model->getprovincias(),
-                    'plantilla'=>$this->load->view('plantillas/plantilla')
-                    ]);
+            $this->load->view('formulario',[
+                'provincias'=>$this->provincias_model->getprovincias(),
+                'plantilla'=>$this->load->view('plantillas/plantilla')
+            ]);
         }
         else
         {
@@ -91,11 +87,12 @@ class Formulario_ctrl extends CI_Controller {
         $letra=substr($dni,-1);
         $num=substr($dni,0,-1);
        
-        if(!ctype_digit($num) || ctype_digit($letra) || $num<=0 || $num>99999999 || substr($letras,$num%23, 1)!=$letra){
-            
+        if(!ctype_digit($num) || ctype_digit($letra) || $num<=0 || $num>99999999 || substr($letras,$num%23, 1)!=$letra)
+        {
             $this->form_validation->set_message('validardni', 'El {field} introducido no es valido');
             return false;
-        }else {
+        }else 
+        {
             return true;
         }
 
@@ -109,15 +106,15 @@ class Formulario_ctrl extends CI_Controller {
      */
     public function provincias_check($valor)
     {
-            if ($valor == 00)
-            {
-                    $this->form_validation->set_message('provincias_check', 'Selecciona una  {field}.');
-                    return FALSE;
-            }
-            else
-            {
-                    return TRUE;
-            }
+        if ($valor == 00)
+        {
+            $this->form_validation->set_message('provincias_check', 'Selecciona una  {field}.');
+            return FALSE;
+        }
+        else
+        {
+            return TRUE;
+        }
     }
 
 }

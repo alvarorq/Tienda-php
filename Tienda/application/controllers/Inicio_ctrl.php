@@ -24,7 +24,8 @@ class Inicio_ctrl extends CI_Controller {
         $inicio=0;
         if($pagina){
             $inicio=$pagina;
-        }
+        }                               
+        //setpaginacion(ruta url, total registros, registros por pagina)
         $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/todos',$this->productos_model->getdestacados(),'4');
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
@@ -44,6 +45,7 @@ class Inicio_ctrl extends CI_Controller {
         if($pagina){
             $inicio=$pagina;
         }
+        //setpaginacion(ruta url, total registros, registros por pagina)
         $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/todos',$this->productos_model->getproductos(),'4');
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
@@ -86,7 +88,6 @@ class Inicio_ctrl extends CI_Controller {
     public function addcarro(){
         $this->form_validation->set_rules('cantidad', 'Cantidad', 'trim|required|integer');
         $campos=$this->input->post();
-        print_r($campos);
         if($this->form_validation->run() == FALSE){
             $this->load->view('detallesproducto', [
                 'plantilla'=>$this->load->view('plantillas/plantilla'),
@@ -97,7 +98,7 @@ class Inicio_ctrl extends CI_Controller {
             foreach ($producto=$this->productos_model->getproducto($campos['idproduc']) as $detalles) {
                 $linea=[
                     'id' => $campos['idproduc'],
-                    'qty' => $_POST['cantidad'],
+                    'qty' => $campos['cantidad'],
                     'price' => $detalles->precio,
                     'name' => $detalles->nombre
                 ];

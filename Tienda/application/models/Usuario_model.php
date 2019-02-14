@@ -10,8 +10,7 @@ class Usuario_model extends CI_Model {
 
         public function __construct()
         {       
-                $this->load->database();
-                
+                $this->load->database();        
         }
 
         /**
@@ -21,8 +20,8 @@ class Usuario_model extends CI_Model {
          */
         public function cerrarSesion(){
                 if($this->session->set_userdata('logeado')==TRUE){
-                $this->session->unset_userdata('usuario');
-                $this->session->set_userdata('logeado',FALSE);
+                        $this->session->unset_userdata('usuario');
+                        $this->session->set_userdata('logeado',FALSE);
                 }
 
         }
@@ -34,11 +33,6 @@ class Usuario_model extends CI_Model {
          * @return boolean
          */
         public function autenticarUsuario($datos){
-                
-                echo '<pre>';
-                print_r($datos);
-                echo '</pre>';
-
                 $usuario = $this->db->get('usuarios',array('nickName'=>$datos['usuario'],'password'=>$datos['logpass']));
                 $resultados = $this->db->count_all_results('usuarios',array('nickName'=>$datos['usuario'],'password'=>$datos['logpass']));
 
@@ -53,9 +47,7 @@ class Usuario_model extends CI_Model {
                 }else{
                         return FALSE;
                 }
-
-
-        }
+      }
 
 
         /**
@@ -78,7 +70,6 @@ class Usuario_model extends CI_Model {
                         'provincia' => $datos['provincias'],
                         'estado' => '1',
                 ];
-
 
                 $query = $this->db->insert('usuarios',$usuario);
         }
