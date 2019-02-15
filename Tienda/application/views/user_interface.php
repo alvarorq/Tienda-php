@@ -11,7 +11,12 @@
 <body>
 
    <table>
-      <?php foreach($usuario as $datos){ ?>
+      <?php 
+      echo '<pre>';
+      print_r($usuario[0]);
+      echo '</pre>';
+      
+      foreach($usuario as $datos){ ?>
          <tr>
             <th>Nombre</th>
             <td><?= $datos->nombre ?></td>

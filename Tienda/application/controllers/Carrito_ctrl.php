@@ -3,7 +3,7 @@
 * @author Alvaro <alvarorq7@gmail.com>
 * @version 1.0.1
 * @date 25/1/2019
-* @lastChanges 12/02/2019
+* @lastChanges 15/02/2019
 */
 
 class Carrito_ctrl extends CI_Controller {
@@ -13,6 +13,7 @@ class Carrito_ctrl extends CI_Controller {
         $this->load->model('categorias_model');
         $this->load->model('productos_model');
         $this->load->model('usuario_model');
+        $this->load->model('pedido_model');
     }
 
     /**
@@ -53,4 +54,26 @@ class Carrito_ctrl extends CI_Controller {
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
         ]);
     }
+
+    public function tramitar(){
+
+        if($this->cart->total_items()<=0){
+            $this->load->view('carrito_view', [
+                'plantilla'=>$this->load->view('plantillas/plantilla'),
+                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
+            ]);
+        }else{
+            if($this->session->userdata('logeado')!=false){
+                $this->pedido_model->tramitarPedido();
+                $this->load->view('carrito_view', [
+                    'plantilla'=>$this->load->view('plantillas/plantilla'),
+                    'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
+                ]);
+            }else{
+                redirect('Formulario_ctrl/form');
+            }
+        }
+    }
+
+
 }
