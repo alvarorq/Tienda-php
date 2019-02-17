@@ -33,7 +33,7 @@
         </tr>
 </table>
 
-<a href="<?=site_url('carrito_ctrl/tramitar');?>" class="btn btn-primary">Tramitar</a>
+<a href="<?=site_url('pedido_ctrl/tramitar');?>" class="btn btn-primary">Tramitar</a>
 
 </body>
 </html>

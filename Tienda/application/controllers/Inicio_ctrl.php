@@ -3,7 +3,7 @@
 * @author Alvaro <alvarorq7@gmail.com>
 * @version 1.0.2
 * @date 20/01/2019
-* @lastChanges 12/02/2019
+* @lastChanges 16/02/2019
 */
 
 class Inicio_ctrl extends CI_Controller {

@@ -3,7 +3,7 @@
 * @author Alvaro <alvarorq7@gmail.com>
 * @version 1.0.0
 * @date 06/02/2019
-* @lastChanges 11/02/2019
+* @lastChanges 16/02/2019
 */
 
 class Usuario_model extends CI_Model {
@@ -19,7 +19,7 @@ class Usuario_model extends CI_Model {
          * @return boolean
          */
         public function cerrarSesion(){
-                if($this->session->set_userdata('logeado')==TRUE){
+                if($this->session->userdata('logeado')==TRUE){
                         $this->session->unset_userdata('usuario');
                         $this->session->set_userdata('logeado',FALSE);
                 }
@@ -33,9 +33,8 @@ class Usuario_model extends CI_Model {
          * @return boolean
          */
         public function autenticarUsuario($datos){
-                $usuario = $this->db->get('usuarios',array('nickName'=>$datos['usuario'],'password'=>$datos['logpass']));
-                $resultados = $this->db->count_all_results('usuarios',array('nickName'=>$datos['usuario'],'password'=>$datos['logpass']));
-
+                $usuario = $this->db->get_where('usuarios',array('nickName'=>$datos['usuario'],'password'=>$datos['logpass']));
+                $resultados = count($usuario->result());
                 if($resultados != 0){
                         $iniciar=[
                                 'logeado'=>TRUE,

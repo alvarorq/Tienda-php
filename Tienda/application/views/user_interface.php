@@ -10,13 +10,16 @@
 </head>
 <body>
 
+<div class="nav">
+<a href="<?=site_url('pedido_ctrl/pedidosRealizados');?>" class="btn btn-success">Pedidos</a>
+</div>
+
    <table>
-      <?php 
-      echo '<pre>';
-      print_r($usuario[0]);
-      echo '</pre>';
-      
-      foreach($usuario as $datos){ ?>
+      <?php foreach($usuario as $datos){ ?>
+         <tr>
+            <th>Id</th>
+            <td><?= $datos->idUsuarios ?></td>
+         </tr>
          <tr>
             <th>Nombre</th>
             <td><?= $datos->nombre ?></td>

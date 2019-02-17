@@ -55,25 +55,4 @@ class Carrito_ctrl extends CI_Controller {
         ]);
     }
 
-    public function tramitar(){
-
-        if($this->cart->total_items()<=0){
-            $this->load->view('carrito_view', [
-                'plantilla'=>$this->load->view('plantillas/plantilla'),
-                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
-            ]);
-        }else{
-            if($this->session->userdata('logeado')!=false){
-                $this->pedido_model->tramitarPedido();
-                $this->load->view('carrito_view', [
-                    'plantilla'=>$this->load->view('plantillas/plantilla'),
-                    'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
-                ]);
-            }else{
-                redirect('Formulario_ctrl/form');
-            }
-        }
-    }
-
-
 }

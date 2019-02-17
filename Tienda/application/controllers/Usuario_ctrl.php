@@ -3,7 +3,7 @@
 * @author Alvaro <alvarorq7@gmail.com>
 * @version 1.0.1
 * @date 25/1/2019
-* @lastChanges 12/02/2019
+* @lastChanges 16/02/2019
 */
 
 class Usuario_ctrl extends CI_Controller {
@@ -16,7 +16,9 @@ class Usuario_ctrl extends CI_Controller {
         
     }
 
-
+    /**
+     * Verificar si los datos introducidos son validos, si existen en la base de datos y son los correctos 
+     */
     public function iniciarSesion(){
         $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required');
         $this->form_validation->set_rules('logpass', 'Logpass', 'trim|required');
@@ -30,6 +32,7 @@ class Usuario_ctrl extends CI_Controller {
         }else{
             $datos = $this->input->post();
             $boleano = $this->usuario_model->autenticarUsuario($datos);
+
             if($boleano){
                 $usuario=$this->session->userdata('usuario')[0];
                 $this->load->view('inicio_view',[
@@ -38,12 +41,7 @@ class Usuario_ctrl extends CI_Controller {
                     'productos'=>$this->productos_model->getdestacados()
                 ]);
             }else{
-                $this->load->view(
-                    inicio_view,
-                    [
-                        'plantilla' => $this->load->view('plantillas/plantilla'),
-                        'usuario' => $this->load->view('platillas/login', ['error'=> '<p>Usuario no encontrado</p>'])
-                    ]);
+                redirect('inicio_ctrl');
             }   
         }
     }

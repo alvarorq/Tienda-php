@@ -13,11 +13,11 @@ class Productos_model extends CI_Model {
                 $this->load->database();
         }
 
-/**
- * Obtener los productos que sean visibles
- *
- * @return array()
- */
+    /**
+     * Obtener los productos que sean visibles
+     *
+     * @return array()
+     */
     public function getproductos($inicio=false, $limite=false)
     {
         if($inicio!==FALSE && $limite!==FALSE){
@@ -28,11 +28,11 @@ class Productos_model extends CI_Model {
         return $query->result();
     }
 
-/**
- * Obtener los productos destacados 
- *
- * @return array()
- */
+    /**
+     * Obtener los productos destacados 
+     *
+     * @return array()
+     */
     public function getdestacados($inicio=false, $limite=false)
     {
         if($inicio!==FALSE && $limite!==FALSE){
