@@ -26,11 +26,11 @@ class Inicio_ctrl extends CI_Controller {
             $inicio=$pagina;
         }                               
         //setpaginacion(ruta url, total registros, registros por pagina)
-        $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/todos',$this->productos_model->getdestacados(),'4');
+        $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/index',$this->productos_model->getdestacados(),'2');
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-            'productos'=>$this->productos_model->getdestacados($inicio,'4')
+            'productos'=>$this->productos_model->getdestacados($inicio,'2')
             ]);
     }
 
@@ -86,7 +86,7 @@ class Inicio_ctrl extends CI_Controller {
      * @param [int] $id
      */
     public function addcarro(){
-        $this->form_validation->set_rules('cantidad', 'Cantidad', 'trim|required|integer');
+        $this->form_validation->set_rules('cantidad', 'Cantidad', 'trim|required|is_natural_no_zero');
         $campos=$this->input->post();
         if($this->form_validation->run() == FALSE){
             $this->load->view('detallesproducto', [
@@ -119,14 +119,14 @@ class Inicio_ctrl extends CI_Controller {
      * Cerrar la sesion del usuario que este logeado en ese momento
      */
     public function cerrarSesion(){
-       /* $this->email->from('arq12daw@gmail.com', 'Alvaro');
-        $this->email->to('alvarorq@outlook.com');
+        $this->email->from('arq12daw@gmail.com', 'Alvaro');
+        $this->email->to('juanmasbt97@gmail.com');
 
         $this->email->subject('Email Test');
         $this->email->message('Testing the email class.');
 
         $this->email->send();
-*/
+
         $this->usuario_model->cerrarSesion();
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),

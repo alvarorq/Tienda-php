@@ -35,5 +35,6 @@
 
 <a href="<?=site_url('pedido_ctrl/tramitar');?>" class="btn btn-primary">Tramitar</a>
 
+
 </body>
 </html>

@@ -38,7 +38,10 @@ class Formulario_ctrl extends CI_Controller {
         }
         else
         {
+            $dat= password_hash($this->input->post('password'),PASSWORD_DEFAULT);
             $datos = $this->input->post();
+            $datos['password']=$dat;
+            $datos['passconf']=$dat;
             $this->usuario_model->setusuario($datos);
             redirect('inicio_ctrl/index');
         }
