@@ -22,17 +22,30 @@ class Pedido_ctrl extends CI_Controller {
      */
     public function tramitar(){
 
-      if($this->cart->total_items()<=0){
-          redirect('Carrito_ctrl/ver_carro');
-      }else{
-          if($this->session->userdata('logeado')!=false){
-              $id=$this->pedido_model->tramitarPedido();
-              $this->detallesPedido($id);
-          }else{
-              redirect('Formulario_ctrl/form');
-          }
-      }
-  }
+        if($this->cart->total_items()<=0){
+            redirect('Carrito_ctrl/vercarro');
+        }else{
+            if($this->session->userdata('logeado')!=false){
+                $id=$this->pedido_model->tramitarPedido();
+                if($id==0){
+                    redirect('Carrito_ctrl/vercarro');
+                    
+                }else{
+                    $this->detallesPedido($id);
+                }
+              
+            }else{
+                redirect('Formulario_ctrl/form');
+            }
+        }
+    }
+
+    public function previewPedido(){
+        $this->load->view('plantillas/previewpedido',[
+                        $this->load->view('plantillas/plantilla'),
+                        'datosusuario'=>$this->session->userdata('usuario')[0]
+                    ]);
+    }
 
     /**
     * Obtener pedidos realizados del usuario
@@ -65,8 +78,46 @@ class Pedido_ctrl extends CI_Controller {
             'pedido'=>$this->pedido_model->getPedido($idpedido),
             'lineaspedido'=>$lineaspedido
          ]
-         );
-   
-   }
+         );  
+    }
 
+    public function verPDF($idpedido){
+        $lineaspedido=$this->pedido_model->lineasPedido($idpedido);
+
+        foreach($lineaspedido as $lineas){
+            $lineas->codigoProducto=$this->productos_model->getproducto($lineas->codigoProducto)[0];
+        }
+        
+        $mpdf = new \Mpdf\Mpdf();
+        $html = $this->load->view('plantillas/pdfpedido',[
+                'pedido'=>$this->pedido_model->getPedido($idpedido),
+                'lineaspedido'=>$lineaspedido],true);
+                
+        $mpdf->WriteHTML($html);
+        $mpdf->Output(); // opens in browser
+        //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
+
+
+    }
+
+    public function cancelarPedido($idpedido){
+      
+        $lineaspedido=$this->pedido_model->lineasPedido($idpedido);
+        
+        foreach($lineaspedido as $lineas){
+           $lineas->codigoProducto=$this->productos_model->getproducto($lineas->codigoProducto)[0];
+           $idProducto=$lineas->codigoProducto;
+           $cantidad=$lineas->cantidad;
+           $this->pedido_model->restaurarStock($idProducto->codigoProducto, $cantidad);
+        }
+        
+        $this->pedido_model->cancelarPedido($idpedido);
+        
+        $this->load->view('listadopedidos',
+        [
+           $this->load->view('plantillas/plantilla'),
+           'pedidos'=>$this->pedido_model->pedidosRealizados()
+        ]
+        );
+      }
 }

@@ -5,50 +5,47 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>Page Title</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 <body>
+   <div class="container">
+      <div class="mt-3 mb-2">
+         <a href="<?=site_url('pedido_ctrl/pedidosRealizados');?>" class="btn btn-primary">Pedidos Realizados</a>
+         <a href="<?=site_url('usuario_ctrl/actualizarDatos');?>" class="btn btn-success ml-2">Modificar Datos usuario</a></td>
+      </div>
 
-<div class="nav">
-<a href="<?=site_url('pedido_ctrl/pedidosRealizados');?>" class="btn btn-success">Pedidos</a>
-</div>
+      <table class="col-8 table-bordered table-hover ">
+         <?php foreach($usuario as $datos){ ?>
+            <tr>
+               <th class="col-2 table-secondary">Email</th>
+               <td class="col-5 text-center"><?= $datos->email ?></td>
+            </tr>
+            <tr>
+               <th class="col-2 table-secondary">Nombre</th>
+               <td class="col-5 text-center"><?= $datos->nombre ?></td>
+            </tr>
+            <tr>
+               <th class="col-2 table-secondary">Apellidos</th>
+               <td class="col-5 text-center"><?= $datos->apellidos ?></td>
+            </tr><tr>
+               <th class="col-2 table-secondary">DNI</th>
+               <td class="col-5 text-center"><?= $datos->dni ?></td>
+            </tr>
+            <tr>
+               <th class="col-2 table-secondary">Direccion</th>
+               <td class="col-5 text-center"><?= $datos->direccion ?></td>
+            </tr>
+            <tr>
+               <th class="col-2 table-secondary">Codigo Postal</th>
+               <td class="col-5 text-center"><?= $datos->cp ?></td>
+            </tr>
+            <tr>
+               <th class="col-2 table-secondary">Provincia</th>
+               <td class="col-5 text-center"><?= $datos->provincia ?></td>
+            </tr>
 
-   <table>
-      <?php foreach($usuario as $datos){ ?>
-         <tr>
-            <th>Id</th>
-            <td><?= $datos->idUsuarios ?></td>
-         </tr>
-         <tr>
-            <th>Nombre</th>
-            <td><?= $datos->nombre ?></td>
-         </tr>
-         <tr>
-            <th>Apellidos</th>
-            <td><?= $datos->apellidos ?></td>
-         </tr><tr>
-            <th>DNI</th>
-            <td><?= $datos->dni ?></td>
-         </tr>
-         <tr>
-            <th>Direccion</th>
-            <td><?= $datos->direccion ?></td>
-         </tr>
-         <tr>
-            <th>Codigo Postal</th>
-            <td><?= $datos->cp ?></td>
-         </tr>
-         <tr>
-            <th>Provincia</th>
-            <td><?= $datos->provincia ?></td>
-         </tr>
-
-         <tr>
-            <th></th>
-            <td>
-            <a href="<?=site_url('usuario_ctrl/darDebaja');?>" class="btn btn-danger">Dar de baja</a><a href="<?=site_url('usuario_ctrl/actualizarDatos');?>" class="btn btn-success">Modificar</a></td>
-         </tr>
-      <?php } ?>  
-   </table>
+         <?php } ?>  
+      </table>
+      <a href="<?=site_url('usuario_ctrl/darDebaja');?>" class="btn btn-danger mt-2">Dar de baja</a>
+   </div>
 </body>
 </html>

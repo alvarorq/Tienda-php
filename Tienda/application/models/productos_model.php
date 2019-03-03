@@ -52,6 +52,13 @@ class Productos_model extends CI_Model {
         return $query->result();
     }
 
+    public function getStockProducto($id){
+        $query=$this->db->get_where('productos',array('codigoProducto'=>$id));
+        $producto=$query->result();
+        $stock=$producto[0]->stock;
+        return $stock;
+    }
+
     /**
      * Obtener productos pertenecientes a la categoria pasada por parametro
      *

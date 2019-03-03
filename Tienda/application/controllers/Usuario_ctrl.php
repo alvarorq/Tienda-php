@@ -57,7 +57,43 @@ class Usuario_ctrl extends CI_Controller {
             ]);
     }
 
+    public function resetPassword(){
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
 
+        if($this->form_validation->run() == FALSE){
+            $this->load->view(
+                'nuevapass',
+                [
+                    'plantilla' => $this->load->view('plantillas/plantilla'),
+                ]);
+        }else{
+            $datos = $this->input->post();
+            $boleano = $this->usuario_model->userExist($datos);
+
+            if($boleano){
+               $this->usuario_model->restablecerPassword($datos);
+               $this->load->view(
+                'nuevapass',
+                [
+                    'plantilla' => $this->load->view('plantillas/plantilla'),
+                    'success'=>'Se ha enviado la nueva contraseña a tu correo'
+                ]);;
+            }else{
+                $this->load->view(
+                    'nuevapass',
+                    [
+                        'plantilla' => $this->load->view('plantillas/plantilla'),
+                        'error'=>'El usuario introducido no existe'
+                    ]);;
+            }   
+        }
+    }
+
+    /**
+     * Dar de baja la cuenta del usuario
+     *
+     * @return void
+     */
     public function darDebaja(){
         $this->usuario_model->bajaUsuario();
         redirect('inicio_ctrl');

@@ -100,13 +100,15 @@ class Inicio_ctrl extends CI_Controller {
                     'id' => $campos['idproduc'],
                     'qty' => $campos['cantidad'],
                     'price' => $detalles->precio,
-                    'name' => $detalles->nombre
+                    'name' => $detalles->nombre,
+                    'imagen' =>$detalles->imagen
                 ];
             }
         
             $this->cart->insert($linea);
             $this->load->view('detallesproducto', [
                 'plantilla'=>$this->load->view('plantillas/plantilla'),
+                'alerta'=>$this->load->view('plantillas/alertacarritoadd'),
                 'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
                 'producto'=>$this->productos_model->getproducto($campos['idproduc'])
             ]);
@@ -119,14 +121,6 @@ class Inicio_ctrl extends CI_Controller {
      * Cerrar la sesion del usuario que este logeado en ese momento
      */
     public function cerrarSesion(){
-        $this->email->from('arq12daw@gmail.com', 'Alvaro');
-        $this->email->to('juanmasbt97@gmail.com');
-
-        $this->email->subject('Email Test');
-        $this->email->message('Testing the email class.');
-
-        $this->email->send();
-
         $this->usuario_model->cerrarSesion();
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),

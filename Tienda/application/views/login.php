@@ -22,7 +22,7 @@
                         <input type="text" class="form-control" name="logpass" placeholder="Contraseña">
                         </div>
                         <input type="submit" class="btn btn-success" value="Login">
-                    
+                        <a href="<?=site_url('usuario_ctrl/resetPassword');?>" class="btn btn-primary">¿Has olvidado tu Contraseña?</a>
                         </div>
                         <br>
                         <?php echo form_error('usuario'); ?> 

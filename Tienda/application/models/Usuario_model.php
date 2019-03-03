@@ -37,7 +37,7 @@ class Usuario_model extends CI_Model {
                 $resultados = count($usuario->result());
                 $pass=$usuario->result();
 
-                if($resultados != 0 && password_verify($datos['logpass'],$pass[0]->password) || $pass[0]->estado!=0){
+                if($resultados != 0 && password_verify($datos['logpass'],$pass[0]->password) && $pass[0]->estado!=0){
                         $iniciar=[
                                 'logeado'=>TRUE,
                                 'usuario'=>$usuario->result()
@@ -86,6 +86,33 @@ class Usuario_model extends CI_Model {
                 $this->db->update('usuarios');
         }
 
+        public function restablecerPassword($datos){
+                $newpass=substr(md5(uniqid()), 0, 10);
+                $passHash= password_hash($newpass,PASSWORD_DEFAULT);
+
+                $this->db->set('password',$passHash);
+                $this->db->where('email',$datos['email']);
+                $this->db->update('usuarios');
+
+                $this->email->from('arq12daw@gmail.com', 'Alvaro');
+                $this->email->to('alvarorq7@gmail.com');
+        
+                $this->email->subject('Restablecer Contraseña');
+                $this->email->message('Tu contraseña ha sido cambiada por : '.$newpass.' Si deseas volverla a cambiar por favor inicia sesion para cambiarla.');
+        
+                $this->email->send();
+        }
+
+        public function userExist($datos){
+                $query = $this->db->get_where('usuarios',array('email'=>$datos['email']));
+                $resultados = count($query->result());
+
+                if($resultados!=0){
+                        return true;
+                }else{
+                        return false;
+                }
+        }
 
         /**
          * Actualizar los datos del usuario actualmente activo en la sesion mediante los datos obtenidos del formulario

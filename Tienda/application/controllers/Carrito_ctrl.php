@@ -19,11 +19,33 @@ class Carrito_ctrl extends CI_Controller {
     /**
      * Facilitamos los productos destacados a la vista
      */
-    public function vercarro(){        
-        $this->load->view('carrito_view',[
-            'plantilla'=>$this->load->view('plantillas/plantilla'),
-            'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
-            ]);
+    public function vercarro(){
+        if(null != ($this->session->userdata('erroresstock'))){
+            foreach ($this->cart->contents() as $items) {
+
+                if($items['qty'] > $this->productos_model->getStockProducto($items['id'])){
+                    $data=array(
+                        'rowid'=>$items['rowid'],
+                        'qty'=>$this->productos_model->getStockProducto($items['id'])
+                    );
+            
+                    $this->cart->update($data);
+                }
+            }
+            unset($_SESSION['erroresstock']);
+            $this->load->view('carrito_view',[
+                'plantilla'=>$this->load->view('plantillas/plantilla'),
+                'erroresstock'=>$this->load->view('plantillas/erroresdeStock'),
+                'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
+                ]);
+        }else{
+            unset($_SESSION['erroresstock']);
+            $this->load->view('carrito_view',[
+                    'plantilla'=>$this->load->view('plantillas/plantilla'),
+                    'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()])
+                    ]);
+        }        
+        
     }
 
     /**
@@ -36,7 +58,7 @@ class Carrito_ctrl extends CI_Controller {
             'rowid'=>$rowid,
             'qty'=>0
         );
-
+        unset($_SESSION['erroresstock']);
         $this->cart->update($data);
         $this->load->view('carrito_view', [
             'plantilla'=>$this->load->view('plantillas/plantilla'),
@@ -48,6 +70,7 @@ class Carrito_ctrl extends CI_Controller {
      * Vaciar el carrito de la compra por completo
      */
     public function vaciarCarro(){
+        unset($_SESSION['erroresstock']);
         $this->cart->destroy();
         $this->load->view('carrito_view', [
             'plantilla'=>$this->load->view('plantillas/plantilla'),

@@ -18,7 +18,11 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+   {
+      $mpdf = new \Mpdf\Mpdf();
+      $html = $this->load->view('html_to_pdf',[],true);
+      $mpdf->WriteHTML($html);
+      $mpdf->Output(); // opens in browser
+      //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
+   }
 }
