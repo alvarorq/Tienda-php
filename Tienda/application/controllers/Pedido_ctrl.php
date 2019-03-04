@@ -40,6 +40,10 @@ class Pedido_ctrl extends CI_Controller {
         }
     }
 
+    /**
+     * Vista previa confirmacion de pedido
+     *
+     */
     public function previewPedido(){
         $this->load->view('plantillas/previewpedido',[
                         $this->load->view('plantillas/plantilla'),
@@ -81,6 +85,11 @@ class Pedido_ctrl extends CI_Controller {
          );  
     }
 
+    /**
+     * Visualizar el pdf del pedido generado
+     *
+     * @param [integer] $idpedido
+     */
     public function verPDF($idpedido){
         $lineaspedido=$this->pedido_model->lineasPedido($idpedido);
 
@@ -100,6 +109,12 @@ class Pedido_ctrl extends CI_Controller {
 
     }
 
+
+    /**
+     * Cancelamos el pedido y desde le modelo devolvemos el stock del producto al dependiendo de la cantidad establecida en linea de pedido
+     *
+     * @param [integer] $idpedido
+     */
     public function cancelarPedido($idpedido){
       
         $lineaspedido=$this->pedido_model->lineasPedido($idpedido);

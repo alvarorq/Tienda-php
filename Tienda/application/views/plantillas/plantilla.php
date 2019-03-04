@@ -13,26 +13,36 @@
 </head>
 <body>
     <header>
-        <div class="menu">
-            <h1>Hola mundo</h1>
-            <p>Tienda de componentes informaticos</p>
-            <h1>Tienda PHP</h1>
-            <div class="rig">
-                <?php var_dump($this->session->userdata('logeado')); if($this->session->userdata('logeado')==!FALSE){ ?>
-                    <p>HAS INICIADO SESION</p>
-                    <a href="<?=site_url('usuario_ctrl/verDatos');?>" class="btn btn-danger">Panel usuario</a>
-                    <a href="<?=site_url('inicio_ctrl/cerrarSesion');?>" class="btn btn-danger">Cerrar Sesion</a>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Tienda PHP</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= site_url('inicio_ctrl/todos')?>">Todos <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= site_url();?>">Destacados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('Carrito_ctrl/vercarro')?>">Carrito</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <?php if($this->session->userdata('logeado')==!FALSE){ ?>
+                    <a href="<?=site_url('usuario_ctrl/verDatos');?>" class="btn btn-success mr-2 my-2 my-sm-0">Panel usuario</a>
+                    <a href="<?=site_url('inicio_ctrl/cerrarSesion');?>" class="nav-item btn btn-danger ml-2">Cerrar Sesion</a>
                 <?php }else { ?>
-                        <a href="<?=site_url('usuario_ctrl/iniciarSesion');?>" class="btn btn-primary">Login</a>
-                        <a href="<?=site_url('formulario_ctrl/form');?>" class="btn btn-primary">Resgistrate</a>
-                <?php } ?>                
-            </div>
-            <h3>
-            <a href="<?= site_url('inicio_ctrl/todos')?>">Todos</a>
-            <a href="<?= site_url();?>">Destacados</a>
-            <a href="<?= site_url('Carrito_ctrl/vercarro')?>">Carrito</a>
-            </h3>
+                        <a href="<?=site_url('usuario_ctrl/iniciarSesion');?>" class="btn btn-success mr-2 my-2 my-sm-0">Login</a>
+                        <a href="<?=site_url('formulario_ctrl/form');?>" class="btn btn-primary ml-2 my-2 my-sm-0">Resgistrate</a>
+                <?php } ?> 
+            </form>
         </div>
+    </nav>
+        
     </header>
     
 </body>

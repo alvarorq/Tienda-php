@@ -23,6 +23,7 @@ class Paginacion {
      * @param [integer] $mostrar
      */
     public function setpaginacion($url, $array,$mostrar){
+        
       $config['base_url'] = $url;
       $config['total_rows'] = count($array);
       $config['per_page'] = $mostrar;

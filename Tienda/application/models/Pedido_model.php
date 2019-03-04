@@ -114,6 +114,12 @@ class Pedido_model extends CI_Model {
       }
    }
 
+   /**
+    * Recoleccion de datos necesarios para generar el email del pedido realizado
+    *
+    * @param [integer] $idpedido
+    * @return array()
+    */
    public function datosdepedidoemail($idpedido){
       $lineaspedido=$this->lineasPedido($idpedido);
 
@@ -128,6 +134,13 @@ class Pedido_model extends CI_Model {
       return $datos;
    }
 
+   /**
+    * Restamos el stock de un producto si es posible
+    *
+    * @param [integer] $id
+    * @param [integer] $restar
+    * @return boolean
+    */
    public function nuevoStock($id,$restar){
 
       $query=$this->db->get_where('productos',array('codigoProducto'=>$id));
@@ -173,6 +186,12 @@ class Pedido_model extends CI_Model {
       return $query->result();
    }
 
+   /**
+    * rastauramos el stock del producto dado, dependiendo de la cantidad recivida por la linea de pedido
+    *
+    * @param [integer] $idproducto
+    * @param [integer] $cantidad
+    */
    public function restaurarStock($idproducto, $cantidad){
       $query=$this->db->get_where('productos',array('codigoProducto'=>$idproducto));
            

@@ -24,7 +24,7 @@ class Productos_model extends CI_Model {
             $this->db->limit($limite, $inicio);
         }
 
-        $query = $this->db->get_where('productos', array('visible' => 1));
+        $query = $this->db->get_where('productos', array('visible' => 1, 'stock >'=> 0));
         return $query->result();
     }
 
@@ -38,7 +38,7 @@ class Productos_model extends CI_Model {
         if($inicio!==FALSE && $limite!==FALSE){
             $this->db->limit($limite, $inicio);
         }
-        $query = $this->db->get_where('productos', array('visible' => 1, 'destacado' => 1));
+        $query = $this->db->get_where('productos', array('visible' => 1, 'destacado' => 1, 'stock >'=> 0));
         return $query->result();
     }
 
@@ -48,7 +48,7 @@ class Productos_model extends CI_Model {
      * @return array()
      */
     public function getproducto($id){
-        $query = $this->db->get_where('productos',array('codigoProducto'=> $id));
+        $query = $this->db->get_where('productos',array('codigoProducto'=> $id, 'stock >'=> 0));
         return $query->result();
     }
 
@@ -66,7 +66,7 @@ class Productos_model extends CI_Model {
      * @return array()
      */
     public function getporcatego($cat){
-        $query = $this->db->get_where('productos',array('Categoria'=> $cat, 'visible' => 1));
+        $query = $this->db->get_where('productos',array('Categoria'=> $cat, 'visible' => 1, 'stock >'=> 0));
         return $query->result();
     }
 }

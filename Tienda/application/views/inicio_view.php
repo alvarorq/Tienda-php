@@ -22,10 +22,16 @@
                         <a href="<?= base_url();?>index.php/inicio_ctrl/detallesproductos/<?= $producto->codigoProducto; ?>" class="btn btn-primary"> Detalles</a>
                     </div>
                 </div>
-            <?php }
-            echo $this->pagination->create_links();
-            ?>
+            <?php } ?>
+            
+            
+          
         </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <?php  echo $this->pagination->create_links();?>
+            </ul>
+        </nav>
     </div>
 </body>
 </html>

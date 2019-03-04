@@ -36,7 +36,8 @@ class Usuario_model extends CI_Model {
                 $usuario = $this->db->get_where('usuarios',array('email'=>$datos['usuario']));
                 $resultados = count($usuario->result());
                 $pass=$usuario->result();
-
+                $provincia= $this->db->get_where('provincias',array('cod'=>$usuario->result()[0]->provincia));
+                $usuario->result()[0]->provincia=$provincia->result()[0]->nombre;
                 if($resultados != 0 && password_verify($datos['logpass'],$pass[0]->password) && $pass[0]->estado!=0){
                         $iniciar=[
                                 'logeado'=>TRUE,
@@ -86,6 +87,12 @@ class Usuario_model extends CI_Model {
                 $this->db->update('usuarios');
         }
 
+        /**
+         * Generamos contraseña aleatoria y es enviada por correo
+         *
+         * @param [type] $datos
+         * @return void
+         */
         public function restablecerPassword($datos){
                 $newpass=substr(md5(uniqid()), 0, 10);
                 $passHash= password_hash($newpass,PASSWORD_DEFAULT);

@@ -296,7 +296,7 @@
             <?php foreach($pedido as $datos){ ?>
 					<p>Datos pedido:</p>
 					<p class="name"><?= $datos->nombre.', '.$datos->apellidos; ?></p>
-					<p> <?= $datos->direccion.', '.$datos->provincia.', '.$datos->cp ; ?></p>
+					<p> <?= $datos->direccion.', '.$this->session->userdata('usuario')[0]->provincia.', '.$datos->cp ; ?></p>
             </div>
            
 				<div class="data right">

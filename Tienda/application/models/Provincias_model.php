@@ -24,4 +24,8 @@ class Provincias_model extends CI_Model {
         return $query->result();
     }
 
+    public function getnameprovincia($cod){
+        $query= $this->db->get_where('provincias',array('cod'=>$cod));
+        return $query->result();
+    }
 }

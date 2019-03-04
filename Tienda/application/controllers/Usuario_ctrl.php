@@ -57,6 +57,11 @@ class Usuario_ctrl extends CI_Controller {
             ]);
     }
 
+    /**
+     * Con el correo del usuario si existe en la base de datos le cambiamos la contraseña y se la enviamos por correo
+     *
+     * @return void
+     */
     public function resetPassword(){
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
 

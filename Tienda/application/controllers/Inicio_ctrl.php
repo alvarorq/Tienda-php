@@ -26,11 +26,11 @@ class Inicio_ctrl extends CI_Controller {
             $inicio=$pagina;
         }                               
         //setpaginacion(ruta url, total registros, registros por pagina)
-        $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/index',$this->productos_model->getdestacados(),'2');
+        $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/index',$this->productos_model->getdestacados(),'4');
         $this->load->view('inicio_view',[
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
-            'productos'=>$this->productos_model->getdestacados($inicio,'2')
+            'productos'=>$this->productos_model->getdestacados($inicio,'4')
             ]);
     }
 
