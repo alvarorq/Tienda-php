@@ -35,9 +35,15 @@ class Usuario_model extends CI_Model {
         public function autenticarUsuario($datos){
                 $usuario = $this->db->get_where('usuarios',array('email'=>$datos['usuario']));
                 $resultados = count($usuario->result());
+                if($resultados>0){
                 $pass=$usuario->result();
-                $provincia= $this->db->get_where('provincias',array('cod'=>$usuario->result()[0]->provincia));
-                $usuario->result()[0]->provincia=$provincia->result()[0]->nombre;
+                $nume=$usuario->result()[0]->provincia;
+                $user=$usuario->result()[0];
+                $provincia= $this->db->get_where('provincias',array('cod'=>$nume));
+                $user=$provincia->result()[0]->nombre;
+                
+                }else{
+                        return false;}
                 if($resultados != 0 && password_verify($datos['logpass'],$pass[0]->password) && $pass[0]->estado!=0){
                         $iniciar=[
                                 'logeado'=>TRUE,

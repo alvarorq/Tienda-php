@@ -60,6 +60,7 @@ class Inicio_ctrl extends CI_Controller {
      * @param [int] $id
      */
     public function porcatego($id){
+
         $this->load->view('inicio_view', [
             'plantilla'=>$this->load->view('plantillas/plantilla'),
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
@@ -128,4 +129,5 @@ class Inicio_ctrl extends CI_Controller {
             'productos'=>$this->productos_model->getdestacados()
             ]);
     }
+
 }

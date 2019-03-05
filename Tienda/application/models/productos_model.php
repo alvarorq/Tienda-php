@@ -25,6 +25,11 @@ class Productos_model extends CI_Model {
         }
 
         $query = $this->db->get_where('productos', array('visible' => 1, 'stock >'=> 0));
+        
+        foreach ($query->result() as $producto) {
+            $producto->precio=$this->getDescuentosiva($producto->descuento,$producto->iva,$producto->precio);
+        }
+
         return $query->result();
     }
 
@@ -38,7 +43,13 @@ class Productos_model extends CI_Model {
         if($inicio!==FALSE && $limite!==FALSE){
             $this->db->limit($limite, $inicio);
         }
+        
         $query = $this->db->get_where('productos', array('visible' => 1, 'destacado' => 1, 'stock >'=> 0));
+        
+        foreach ($query->result() as $producto) {
+            $producto->precio=$this->getDescuentosiva($producto->descuento,$producto->iva,$producto->precio);
+        }
+
         return $query->result();
     }
 
@@ -49,6 +60,11 @@ class Productos_model extends CI_Model {
      */
     public function getproducto($id){
         $query = $this->db->get_where('productos',array('codigoProducto'=> $id, 'stock >'=> 0));
+        
+        foreach ($query->result() as $producto) {
+            $producto->precio=$this->getDescuentosiva($producto->descuento,$producto->iva,$producto->precio);
+        }
+
         return $query->result();
     }
 
@@ -67,6 +83,23 @@ class Productos_model extends CI_Model {
      */
     public function getporcatego($cat){
         $query = $this->db->get_where('productos',array('Categoria'=> $cat, 'visible' => 1, 'stock >'=> 0));
+
+        foreach ($query->result() as $producto) {
+            $producto->precio=$this->getDescuentosiva($producto->descuento,$producto->iva,$producto->precio);
+        }
+
         return $query->result();
     }
+
+    public function getDescuentosiva($descuento, $iva, $precio){
+        $precioiva=$precio*0.21;
+        if($descuento>0){
+        $preciodescuento=$precio/$descuento;}
+        else{
+            $preciodescuento=0;
+        }
+        $preciofin=$precioiva + $preciodescuento+$precio;
+        return $preciofin;
+    }
+
 }
