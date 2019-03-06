@@ -321,7 +321,7 @@
 					<tr>
 						<td class="desc"><h3><?=$linea->codigoProducto->nombre;?></h3><?=$linea->codigoProducto->descripcion;?></td>
 						<td class="qty"><?=$linea->cantidad;?></td>
-						<td class="total"><?php echo $linea->subTotal; $total+=$linea->subTotal; ?></td>
+						<td class="total"><?php echo $linea->subTotal.' '.$this->session->userdata('current_divisa'); $total+=$linea->subTotal; ?></td>
 					</tr>
                <?php }  ?>
 				</tbody>
@@ -333,7 +333,7 @@
 							<td class="desc"></td>
 							<td class="qty"></td>
 							<td class="unit">TOTAL:</td>
-							<td class="total"><?= $total ?>€</td>
+							<td class="total"><?= $total.' '.$this->session->userdata('current_divisa');?></td>
 						</tr>
 					</tbody>
 				</table>

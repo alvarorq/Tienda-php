@@ -40,7 +40,7 @@
                   <img src="<?= base_url().$linea['imagen']; ?>" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                   <div class="media-body">
                      <h4><?= $linea['name']; ?></h4>
-                     <p>Cantidad: <?=$linea['qty'];?> | Subtotal: <?= $linea['subtotal'];?>€</p>
+                     <p>Cantidad: <?=$linea['qty'];?> | Subtotal: <?= $linea['subtotal'].' '.$this->session->userdata('current_divisa');?></p>
                   </div>
                </div>
                </td>
@@ -48,7 +48,7 @@
          <?php } ?>
          <tr>
             <th class="col-2 table-success">Total</th>
-            <td><?= $this->cart->total() ?>€</td>
+            <td><?= $this->cart->total() ?><?= ' '.$this->session->userdata('current_divisa'); ?></td>
          </tr>   
       </table>
       <a href="<?= site_url('Carrito_ctrl/vercarro')?>" class="btn btn-danger mt-2">Cancelar</a>

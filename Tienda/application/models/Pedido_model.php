@@ -87,15 +87,15 @@ class Pedido_model extends CI_Model {
                               ],true);
                 
                             
-         $pdfFilePath = FCPATH . "attach/pdf_name.pdf";
+         $pdfFilePath = FCPATH . 'attach\pedido'.$idpedido->idPedidos.'.pdf';
          $mpdf->WriteHTML($html); 
          $mpdf->Output($pdfFilePath, "F");
 
          
-         $this->email->set_header('Content-Type', 'text/html');
+         //$this->email->set_header('Content-Type', 'text/html');
 
          $this->email->from('arq12daw@gmail.com', 'Alvaro');
-         $this->email->to('alvarorq7@gmail.com');
+         $this->email->to('alvarorq@outlook.com');
         
          $this->email->subject('Resumen de tu pedido');
          $datosemail = $this->datosdepedidoemail($idpedido->idPedidos);
@@ -105,7 +105,7 @@ class Pedido_model extends CI_Model {
                                        ],
                                        true);
          $this->email->message($message);
-         $this->email->attach(__DIR__.'/attach/pdf_name.pdf');
+         $this->email->attach('C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\attach\pedido'.$idpedido->idPedidos.'.pdf', 'attachment', 'Factura'.$idpedido->idPedidos.'.pdf');
          $this->email->send();
 
          $this->cart->destroy();

@@ -92,6 +92,7 @@ class Productos_model extends CI_Model {
     }
 
     public function getDescuentosiva($descuento, $iva, $precio){
+
         $precioiva=$precio*0.21;
         if($descuento>0){
         $preciodescuento=$precio/$descuento;}
@@ -99,6 +100,12 @@ class Productos_model extends CI_Model {
             $preciodescuento=0;
         }
         $preciofin=$precioiva + $preciodescuento+$precio;
+        if($this->session->userdata('current_divisa')==null){
+            $preciofin*=$this->session->userdata('monedas')['EUR'];
+            $this->session->set_userdata('current_divisa','EUR');
+        }else{
+            $preciofin*=$this->session->userdata('monedas')[$this->session->userdata('current_divisa')];
+        }
         return $preciofin;
     }
 

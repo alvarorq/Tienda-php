@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $producto->nombre; ?></h5>
                         <p class="card-text"><?= $producto->descripcion; ?></p>
-                        <p class="card-text"><?= $producto->precio; ?>€</p>
+                        <p class="card-text"><?= $producto->precio.' '.$this->session->userdata('current_divisa');?></p>
                         <a href="<?= base_url();?>index.php/inicio_ctrl/detallesproductos/<?= $producto->codigoProducto; ?>" class="btn btn-primary"> Detalles</a>
                     </div>
                 </div>

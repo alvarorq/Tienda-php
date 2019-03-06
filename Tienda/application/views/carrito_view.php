@@ -21,9 +21,9 @@
                 <?php foreach ($this->cart->contents() as $items) { ?>
                         <tr>
                         <td><?= $items['name'] ;?></td>
-                        <td><?= $items['price'] ;?>€</td>
+                        <td><?= $items['price'].' '.$this->session->userdata('current_divisa');?></td>
                         <td><?= $items['qty'] ;?></td>
-                        <td><?= $items['subtotal'] ;?>€</td>
+                        <td><?= $items['subtotal'].' '.$this->session->userdata('current_divisa'); ?></td>
                         <td><a href="<?= site_url('carrito_ctrl/removecarro').'/'. $items['rowid'];?>">borrar</a></td>
                         </tr>      
                 <?php } ?>
@@ -31,7 +31,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><strong>Total: <?= $this->cart->total(); ?>€</strong></td>  
+                <td><strong>Total: <?= $this->cart->total().' '.$this->session->userdata('current_divisa'); ?></strong></td>  
                 <td><a href="<?= site_url('carrito_ctrl/vaciarCarro');?>">Vaciar</a></td> 
                 </tr>
         </table>

@@ -14,6 +14,7 @@ class Inicio_ctrl extends CI_Controller {
         $this->load->model('categorias_model');
         $this->load->model('usuario_model');
     }
+    
 
     /**
      * Facilitamos los productos destacados a la vista
@@ -21,10 +22,12 @@ class Inicio_ctrl extends CI_Controller {
      * @param integer $pagina
      */
     public function index($pagina=FALSE){
+        
         $inicio=0;
         if($pagina){
             $inicio=$pagina;
-        }                               
+        }             
+        $this->monedas();                  
         //setpaginacion(ruta url, total registros, registros por pagina)
         $this->paginacion->setpaginacion(site_url().'/inicio_ctrl/index',$this->productos_model->getdestacados(),'4');
         $this->load->view('inicio_view',[
@@ -128,6 +131,28 @@ class Inicio_ctrl extends CI_Controller {
             'categorias'=>$this->load->view('plantillas/menu_categorias',['categorias'=>$this->categorias_model->getcategorias()]),
             'productos'=>$this->productos_model->getdestacados()
             ]);
+    }
+
+    public function  monedas(){
+        $xml = simplexml_load_file("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
+        $monedas['EUR']=1;
+        foreach ($xml->Cube->Cube->Cube as $c) {
+            $attr = $c->attributes();
+            //echo "Un euro equivale a ".$attr[1]." ".$attr[0]."<br>";
+            $monedas[(string)$attr[0]]=(double)$attr[1];
+                
+        }
+
+        $this->session->set_userdata('monedas',$monedas);
+       
+    }
+
+    public function cambioMoneda(){
+        //$this->form_validation->set_rules('moneda', 'Moneda');
+        $this->input->post('moneda');
+        $this->session->set_userdata('current_divisa',$this->input->post('moneda'));
+        $this->session->userdata('monedas')[$this->session->userdata('current_divisa')];
+        redirect('Inicio_ctrl/index');
     }
 
 }

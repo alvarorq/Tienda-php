@@ -48,7 +48,7 @@
                   <img src="<?= base_url().$linea->codigoProducto->imagen; ?>" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                   <div class="media-body">
                      <h4><?= $linea->codigoProducto->descripcion; ?></h4>
-                     <p>Cantidad: <?=$linea->cantidad;?> | Subtotal<?php echo $linea->subTotal; $total+=$linea->subTotal;?>€</p>
+                     <p>Cantidad: <?=$linea->cantidad;?> | Subtotal<?php echo $linea->subTotal.' '.$this->session->userdata('current_divisa'); $total+=$linea->subTotal?></p>
                   </div>
                </div>
                </td>
@@ -56,7 +56,7 @@
          <?php } ?>
          <tr>
             <th class="col-2 table-success">Total</th>
-            <td><?= $total ?>€</td>
+            <td><?= $total.' '.$this->session->userdata('current_divisa'); ?></td>
          </tr>   
       </table>
 

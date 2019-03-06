@@ -1,4 +1,6 @@
 <?php
+
+use Mpdf\Tag\SetHtmlPageHeader;
 /**
 * @author Alvaro <alvarorq7@gmail.com>
 * @version 1.0.1
@@ -98,6 +100,7 @@ class Pedido_ctrl extends CI_Controller {
         }
         
         $mpdf = new \Mpdf\Mpdf();
+        $mpdf->SetHeader('<h1> Esto es un encabezado definido </h1>');
         $html = $this->load->view('plantillas/pdfpedido',[
                 'pedido'=>$this->pedido_model->getPedido($idpedido),
                 'lineaspedido'=>$lineaspedido],true);

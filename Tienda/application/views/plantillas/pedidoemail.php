@@ -69,13 +69,13 @@
          
          <?php foreach($lineaspedido as $linea){ ?>
       
-            <tr><td><?=$linea->codigoProducto->nombre;?></td><td><?=$linea->cantidad;?></td><td><?php echo $linea->subTotal; $total+=$linea->subTotal; ?></td></tr>
+            <tr><td><?=$linea->codigoProducto->nombre;?></td><td><?=$linea->cantidad;?></td><td><?php echo $linea->subTotal.' '.$this->session->userdata('current_divisa'); $total+=$linea->subTotal; ?></td></tr>
          
          <?php }?>
 
         <tr>
           <td colspan="2"><b>TOTAL:</b></td>
-          <td><?= $total ?>€</td>
+          <td><?= $total.' '.$this->session->userdata('current_divisa'); ?></td>
         </tr>
       </table>
 
