@@ -45,7 +45,7 @@
     </nav>
         
     </header>
-    <div> <a href='<?php echo site_url('examples/muestra_Productos') ?>'>Crud Productos</a> | <a href='<?php echo site_url('examples/muestra_Categorias') ?>'>Crud Categorias</a> | <a href='<?php echo site_url('examples/muestra_Usuarios') ?>'>Crud Usuarios</a> </div>
+    <div> <a href='<?php echo site_url('examples/muestra_Productos') ?>'>Crud Productos</a> | <a href='<?php echo site_url('examples/muestra_Categorias') ?>'>Crud Categorias</a> | <a href='<?php echo site_url('examples/muestra_Usuarios') ?>'>Crud Pedidos</a> </div>
     <div style='height:20px;'></div>
     <div style="padding: 10px"> 
 	<?php echo $output; ?> 

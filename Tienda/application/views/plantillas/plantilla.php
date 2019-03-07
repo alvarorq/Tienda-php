@@ -34,13 +34,37 @@
             </ul>
             <div class="form-inline my-2 my-lg-0">
             <?php if($this->session->userdata('logeado')==!FALSE){ ?>
-                    <a href="<?=site_url('examples/index');?>" class="btn btn-success mr-2 my-2 my-sm-0">CRUD</a>
+                    
                     <a href="<?=site_url('usuario_ctrl/verDatos');?>" class="btn btn-success mr-2 my-2 my-sm-0">Panel usuario</a>
+                    
+                    
+                    <?php if($this->session->userdata('usuario')[0]->idUsuarios != null && $this->session->userdata('usuario')[0]->idUsuarios==1){?>
+                        <a href="<?=site_url('examples/index');?>" class="btn btn-success mr-2 my-2 my-sm-0">CRUD</a>
+                        
+                        <div class="btn-group mr-2 ml-2">
+                            <button type="button" class="btn btn-primary">XML importar</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?=site_url('xml_ctrl/vista_importar');?>">Categorias</a></li>
+                                <li><a href="<?=site_url('xml_ctrl/vista_importar2');?>">Productos</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="btn-group mr-2 ml-2">
+                            <button type="button" class="btn btn-primary">XML exportar</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?=site_url('xml_ctrl/exportarCategorias');?>" >Categorias</a></li>
+                                <li><a href="<?=site_url('xml_ctrl/exportarProductos');?>" >Productos</a></li>
+                            </ul>
+                        </div>
+                <?php       } ?>
                     <a href="<?=site_url('inicio_ctrl/cerrarSesion');?>" class="nav-item btn btn-danger ml-2">Cerrar Sesion</a>
-                   
-                    
-                    
-                <?php }else { ?>
+                        <?php }else { ?>
                         <a href="<?=site_url('usuario_ctrl/iniciarSesion');?>" class="btn btn-success mr-2 my-2 my-sm-0">Login</a>
                         <a href="<?=site_url('formulario_ctrl/form');?>" class="btn btn-primary ml-2 my-2 my-sm-0">Resgistrate</a>
                 <?php } ?> 
@@ -53,6 +77,7 @@
                             <option value="<?= $key; ?>"><?= $key; ?></option>
                         <?php } ?>
                     </select>
+                    
                     </form>
             </div>
         </div>

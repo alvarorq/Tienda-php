@@ -1,0 +1,865 @@
+<categorias><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Pantalla para equipo de sobremesa LCD FHD</descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Teclado mecanico retroiluminado</descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Tarjeta grafica RTX 2070 10Gb DDR5</descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Disco Solido de 250 GB de almacenamiento</descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Fuente alimentacion de 550w 80 Plus Silver</descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Lector y grabador de CD/DVD BlueRay </descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Mando inalambrico compatible con PC y consola </descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Procesador ultima generacion 4 nucleos 3.2 Ghz </descripcion><visible>1</visible></categoria><categoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$codigoCategoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 10</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 10<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><codigoCategoria></codigoCategoria>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined property: stdClass::$categoria</p>
+<p>Filename: views/xmlcategorias.php</p>
+<p>Line Number: 11</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\views\xmlcategorias.php<br />
+			Line: 11<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\application\controllers\xml_ctrl.php<br />
+			Line: 74<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\Users\Alvar\DAW\Xampp\htdocs\DWES\framework\tienda\index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><categoria></categoria><descripcion>Raton bluetooth con 5000 dpi, botones extras</descripcion><visible>1</visible></categoria></categorias>

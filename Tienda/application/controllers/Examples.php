@@ -35,7 +35,7 @@ class Examples extends CI_Controller
 
 	public function muestra_Usuarios()
 	{
-		$this->grocery_crud->set_table('usuarios'); //$this->grocery_crud->columns('nombre','codigo','descripcion','precio', 'cantidad_dispo');
+		$this->grocery_crud->set_table('pedidos'); //$this->grocery_crud->columns('nombre','codigo','descripcion','precio', 'cantidad_dispo');
 		$output = $this->grocery_crud->render();
 		$this->_example_output($output);
 	}

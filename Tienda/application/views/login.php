@@ -20,7 +20,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">*</span>
                         </div>
-                        <input type="text" class="form-control" name="logpass" placeholder="Contraseña">
+                        <input type="password" class="form-control" name="logpass" placeholder="Contraseña">
                         </div>
                         <input type="submit" class="btn btn-success ml-4" value="Login">
                         <a href="<?=site_url('usuario_ctrl/resetPassword');?>" class="ml-4 btn btn-primary">¿Has olvidado tu Contraseña?</a>
